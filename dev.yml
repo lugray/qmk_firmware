@@ -1,0 +1,5 @@
+name: qmk-firmware
+
+commands:
+  init: qmk setup -H .
+  flash_ergo: CONVERT_TO=elite_pi qmk flash -kb omkbd/ergodash -km lisa
