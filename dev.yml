@@ -3,3 +3,6 @@ name: qmk-firmware
 commands:
   init: qmk setup -H .
   flash_ergo: CONVERT_TO=elite_pi qmk flash -kb omkbd/ergodash -km lisa
+  compile_ergo: CONVERT_TO=elite_pi qmk compile -kb omkbd/ergodash -km lisa
+  flash_model01: qmk flash -kb keyboardio/model01 -km lisa
+  compile_model01: qmk compile -kb keyboardio/model01 -km lisa
