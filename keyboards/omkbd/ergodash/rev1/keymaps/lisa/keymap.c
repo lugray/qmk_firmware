@@ -11,6 +11,7 @@ enum custom_keycodes {
   M_ESC = SAFE_RANGE,
   M_1,
   M_2,
+  M_UP,
 };
 
 #undef LAYOUT
@@ -116,6 +117,11 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         MACRO_2;
       }
       break;
+    case M_UP:
+      if (record->event.pressed) {
+        SEND_STRING("../");
+      }
+      break;
   }
   return true;
 }
@@ -131,9 +137,13 @@ bool get_hold_on_other_key_press(uint16_t keycode, keyrecord_t *record) {
 
 const uint16_t PROGMEM kj[] = {KC_K, KC_J, COMBO_END};
 const uint16_t PROGMEM df[] = {KC_D, KC_F, COMBO_END};
+const uint16_t PROGMEM sd[] = {KC_S, KC_D, COMBO_END};
+const uint16_t PROGMEM kl[] = {KC_K, KC_L, COMBO_END};
 combo_t key_combos[COMBO_COUNT] = {
   COMBO(kj, KC_ESC),
-  COMBO(df, DCD),
+  COMBO(df, KC_TAB),
+  COMBO(sd, M_UP),
+  COMBO(kl, KC_ENT),
 };
 
 #define MOD_MASK_NONE 0
