@@ -6,3 +6,5 @@ commands:
   compile_ergo: CONVERT_TO=elite_pi qmk compile -kb omkbd/ergodash -km lisa
   flash_model01: qmk flash -kb keyboardio/model01 -km lisa
   compile_model01: qmk compile -kb keyboardio/model01 -km lisa
+  flash_meet: qmk flash -kb massdrop/thekey_v2 -km lisa
+  compile_meet: qmk compile -kb massdrop/thekey_v2 -km lisa
